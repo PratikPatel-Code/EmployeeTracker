@@ -18,7 +18,7 @@ INSERT INTO roles (title, salary, department_id) VALUES ("R&D Manager", 100000, 
 INSERT INTO roles (title, salary, department_id) VALUES ("Tester", 65000, 04);
 
 /* Inserts employees into employee */
-INSERT INTO employee (first_name, last_name, role_id, manager_id) 
+INSERT INTO employee (first_name, last_name, roles_id, manager_id) 
 VALUES 
 ("Bruce", "Wayne", 01, null),
 ("Dick", "Grayson", 05, 01),

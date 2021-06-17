@@ -26,10 +26,10 @@ CREATE TABLE employee(
 	id int auto_increment,
     first_name varchar(30),
     last_name varchar(30),
-    role_id int,
+    roles_id int,
     manager_id int,
     primary key(id),
-    foreign key(role_id)    
+    foreign key(roles_id)    
         references roles(id),
     foreign key(manager_id) 
         references employee(id)
