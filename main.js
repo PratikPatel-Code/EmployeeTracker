@@ -142,13 +142,21 @@ function addEmp () {
         },
     ])
     .then(function (answer) {
-        conn.query("INSERT INTO employee SET ?",
-            {
-                first_name: answer.first_name,
-                last_name: answer.last_name,
-                roles_id: answer.roles_id,
-                manager_id: answer.manager_id,
-            }),
-    tracker();
-    })
+        
+        conn.query(
+          "INSERT INTO employee SET ?",
+          {
+            first_name: answer.first_name,
+            last_name: answer.last_name,
+            roles_id: answer.roles_id,
+            manager_id: answer.manager_id,
+          },
+          function (err) {
+            if (err) throw err;
+            console.log("Your employee has been added.");
+            tracker();
+          }
+        );
+      });
 };
+
